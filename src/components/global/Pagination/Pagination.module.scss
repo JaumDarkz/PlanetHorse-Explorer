@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0;
+
+  button {
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'SpaceHorse', sans-serif;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    color: #fff;
+    font-family: 'SpaceHorse', sans-serif;
+  }
+}

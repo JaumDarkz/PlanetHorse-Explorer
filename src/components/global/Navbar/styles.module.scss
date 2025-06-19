@@ -1,0 +1,167 @@
+.container {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  background-color: #7d4d45;
+  z-index: 3;
+
+  &>svg {
+    position: absolute;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 85%;
+
+    @media screen and (max-width: 1510px) {
+      width: 90%;
+    }
+
+    @media screen and (max-width: 1273px) {
+      width: 100%;
+    }
+
+    .burgerIcon {
+      margin: 0 25px;
+      width: 38px;
+      height: 45px;
+      outline: 0;
+      border: 0;
+      background-color: transparent;
+      display: none;
+      cursor: pointer;
+
+      @media screen and (max-width: 1160px) {
+        display: flex;
+      }
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 140px;
+      transition: transform .3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @media screen and (max-width: 1260px) {
+        margin-left: 5%;
+      }
+
+      @media screen and (max-width: 490px) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+      }
+
+      @media screen and (max-width: 350px) {
+        left: 40%;
+        width: 120px;
+      }
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 700px;
+    height: 100%;
+
+    @media screen and (max-width: 1160px) {
+      display: none;
+    }
+
+    a {
+      color: #fff;
+      font-family: 'UpheavalPro';
+      font-size: 24px;
+      text-decoration: none;
+      transition: transform .3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+    cursor: pointer;
+
+    #userProfileButton {
+      position: absolute;
+      right: 10px;
+      bottom: 8px;
+      display: flex;
+      align-items: center;
+
+      .address {
+        font-family: 'UpheavalPro';
+        font-size: 24px;
+        color: #fff;
+        margin: 0 25px;
+        transition: transform .3s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 900px) {
+          margin: 0 15px;
+        }
+
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
+
+      .userPicture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      background-color: transparent;
+      color: #fff;
+      font-family: 'UpheavalPro';
+      font-size: 24px;
+      outline: 0;
+      border: 0;
+      margin-bottom: 3px;
+      margin-right: 7%;
+      cursor: pointer;
+
+      &::before {
+        content: 'Connect wallet';
+
+        @media screen and (max-width: 560px) {
+          font-size: 16px;
+          content: 'Connect';
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.searchBar {
+  position: relative;              /* necessário p/ dropdown */
+  width: 90%;
+  display: flex;
+  gap: 10px;
+  margin: 20px auto 0;
+
+  .searchInput {
+    flex: 1;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background: transparent;
+    color: #fff;
+    padding: 0 20px;
+    font-family: 'SpaceHorse', sans-serif;
+    outline: none;
+
+    &::placeholder {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+
+  .searchButton,
+  .threeDots {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  .threeDots {
+    margin-top: 3px;
+  }
+
+  /* ---------- Dropdown ---------- */
+  .dropdown {
+    position: absolute;
+    right: 0;
+    top: 115%;
+    min-width: 180px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+
+    button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: 'SpaceHorse', sans-serif;
+      text-align: left;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    .active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
