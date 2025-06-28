@@ -18,7 +18,7 @@ const useImage = (result: number): Props => {
         const response = await import(`@/assets/game/pop-up/start/${result}.gif`)
         setImage(response.default)
       } catch (err) {
-        setError(err)
+        setError(err as any)
       } finally {
         setLoading(false)
       }

@@ -5,7 +5,7 @@ import getResultImage from '@/utils/hooks/race-result-image';
 import getResultHorseImage from '@/utils/hooks/race-result-image-horse';
 import { Horse } from '@/domain/models/Horse';
 import CountUp from 'react-countup';
-import { HorseResults } from '../Modals/RaceStart';
+import { HorseResults } from '../../views/modals/RaceStart'
 
 interface Props {
   horseResult: HorseResults;

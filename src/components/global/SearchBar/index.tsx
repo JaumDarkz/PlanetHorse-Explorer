@@ -11,13 +11,15 @@ interface Props {
   onChange: (value: string) => void;
   orderBy: '' | 'LEVEL' | 'RARITY';
   onOrderChange: (o: '' | 'LEVEL' | 'RARITY') => void;
+  showOptions?: boolean
 }
 
 const SearchBar: React.FC<Props> = ({
   value,
   onChange,
   orderBy,
-  onOrderChange
+  onOrderChange,
+  showOptions
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -53,37 +55,39 @@ const SearchBar: React.FC<Props> = ({
         className={styles.searchButton}
       />
 
-      <Image
-        alt="Options"
-        width={8}
-        height={26}
-        src={threeDots}
-        className={styles.threeDots}
-        onClick={() => setOpen((p) => !p)}
-      />
-
-      {open && (
-        <div className={styles.dropdown}>
-          <button
-            className={!orderBy ? styles.active : ''}
-            onClick={() => clickOption('')}
-          >
-            None
-          </button>
-          <button
-            className={orderBy === 'LEVEL' ? styles.active : ''}
-            onClick={() => clickOption('LEVEL')}
-          >
-            Order by Level
-          </button>
-          <button
-            className={orderBy === 'RARITY' ? styles.active : ''}
-            onClick={() => clickOption('RARITY')}
-          >
-            Order by Rarity
-          </button>
-        </div>
+      {showOptions && (
+        <Image
+          alt="Options"
+          width={8}
+          height={26}
+          src={threeDots}
+          className={styles.threeDots}
+          onClick={() => setOpen((p) => !p)}
+        />
       )}
+
+        {open && (
+          <div className={styles.dropdown}>
+            <button
+              className={!orderBy ? styles.active : ''}
+              onClick={() => clickOption('')}
+            >
+              None
+            </button>
+            <button
+              className={orderBy === 'LEVEL' ? styles.active : ''}
+              onClick={() => clickOption('LEVEL')}
+            >
+              Order by Level
+            </button>
+            <button
+              className={orderBy === 'RARITY' ? styles.active : ''}
+              onClick={() => clickOption('RARITY')}
+            >
+              Order by Rarity
+            </button>
+          </div>
+        )}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { Horse } from '@/domain/models/Horse'
 import CountUp from 'react-countup'
-import { HorseResults } from '../Modals/RaceStart'
+import { HorseResults } from '../../views/modals/RaceStart'
 
 interface Props {
   horse: Horse
@@ -29,7 +29,7 @@ const HorseRace: React.FC<Props> = ({ horse, horseResult, horseRacingFinish }) =
     setResult(randomNumber)
   }
 
-  function getRandomNumber(min, max): number {
+  function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 

@@ -1,0 +1,136 @@
+.filterContainer {
+  position: relative;
+}
+
+.filterButton {
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+  border: 2px solid #654321;
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: #F4E4BC;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+    transform: translateY(-1px);
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+    border-color: #B8860B;
+  }
+  
+  .filterIcon {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .activeIndicator {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: #FF4444;
+    border-radius: 50%;
+    border: 1px solid #F4E4BC;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #F4E4BC;
+  border: 3px solid #8B4513;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 280px;
+  margin-top: 0.5rem;
+  
+  .dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 2px solid #8B4513;
+    background: linear-gradient(135deg, #DEB887 0%, #D2B48C 100%);
+    
+    h3 {
+      margin: 0;
+      color: #8B4513;
+      font-size: 1.1rem;
+    }
+    
+    .clearButton {
+      background: transparent;
+      border: 1px solid #8B4513;
+      color: #8B4513;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+      
+      &:hover:not(:disabled) {
+        background: #8B4513;
+        color: #F4E4BC;
+      }
+      
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .filterGroup {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #8B4513;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 2px solid #8B4513;
+      border-radius: 4px;
+      background: white;
+      color: #8B4513;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      
+      &:focus {
+        outline: none;
+        border-color: #DAA520;
+        box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.2);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    right: auto;
+    left: 0;
+    min-width: 250px;
+  }
+}

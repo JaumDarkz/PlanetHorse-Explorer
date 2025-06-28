@@ -91,6 +91,7 @@ const ExplorerPage: React.FC = () => {
             setOrderBy(o);
             setCurrentPage(1);
           }}
+          showOptions={true}
         />
 
         <span className={styles.countHorses}>{orderedHorses.length} Horses</span>
