@@ -10,7 +10,7 @@ import FilterDropdown from "../../components/FilterDropdown"
 import type { FilterOptions, SortOption } from "../../types"
 import { mockPlayers } from "../../utils/mocks/mockPlayers"
 
-const PAGE_SIZE = 20
+const PAGE_SIZE = 10
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("")

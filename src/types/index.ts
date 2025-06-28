@@ -27,3 +27,28 @@ export interface FilterOptions {
 }
 
 export type SortOption = "TOTAL_POINTS" | "LEVEL" | "RACES_WON" | "WIN_RATE" | "TOKENS_EARNED" | "HORSES_OWNED"
+
+
+
+export interface ReferralData {
+  totalReferrals: number
+  activeReferrals: number
+  totalEarned: number
+  thisMonth: number
+  level: number
+}
+
+export interface Reward {
+  type: string
+  amount: number | string
+  icon: string
+}
+
+export interface Milestone {
+  id: string
+  title: string
+  description: string
+  requiredReferrals: number
+  rewards: Reward[]
+  claimed: boolean
+}
