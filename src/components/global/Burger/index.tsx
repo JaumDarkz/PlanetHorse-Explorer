@@ -17,13 +17,13 @@ const Burger: React.FC<Props> = ({ close = false }) => {
       <Link href='/'>
         <div>Explorer</div>
       </Link>
-      <Link href='/leaderboard'>
+      <Link href='/'>
         <div>Leaderboard</div>
       </Link>
-      <Link href='/referral'>
+      <Link href='/'>
         <div>Referral</div>
       </Link>
-      <Link href='https://opensea.io/'>
+      <Link href='https://marketplace.roninchain.com/collections/origin-horses'>
         <div>Marketplace</div>
       </Link>
     </div>
