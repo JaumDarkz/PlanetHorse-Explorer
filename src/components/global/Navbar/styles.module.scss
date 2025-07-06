@@ -79,6 +79,16 @@
     width: 700px;
     height: 100%;
 
+    .disabledLink {
+      font-family: 'UpheavalPro';
+      font-size: 24px;
+      color: #aaa;
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+      user-select: none;
+    }
+
     @media screen and (max-width: 1160px) {
       display: none;
     }
@@ -110,12 +120,23 @@
       display: flex;
       align-items: center;
 
+      .disabledLink {
+        font-family: 'UpheavalPro';
+        font-size: 24px;
+        color: #aaa;
+        opacity: 0.6;
+        cursor: not-allowed;
+        pointer-events: none;
+        user-select: none;
+      }
+
       .address {
         font-family: 'UpheavalPro';
         font-size: 24px;
         color: #fff;
         margin: 0 25px;
         transition: transform .3s;
+
 
         &:hover {
           transform: scale(1.05);

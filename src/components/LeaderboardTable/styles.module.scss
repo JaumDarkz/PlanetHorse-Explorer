@@ -1,8 +1,7 @@
 .tableContainer {
   background: rgba(244, 228, 188, 0.95);
-  border: 4px solid #8B4513;
+  border: 4px solid #8b4513;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
@@ -11,77 +10,38 @@
   overflow-x: auto;
 }
 
+/* HEADER */
 .tableHeader {
   display: grid;
-  grid-template-columns: 80px 1fr 80px 120px 120px 120px 120px 120px;
-  background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-  color: #F4E4BC;
+  grid-template-columns: 60px 1fr 120px;
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  color: #f4e4bc;
   font-weight: bold;
   font-size: 0.9rem;
   border-bottom: 2px solid #654321;
-  
-  .headerCell {
-    padding: 1rem 0.5rem;
-    text-align: center;
-    border-right: 1px solid rgba(101, 67, 33, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-    
-    &:last-child {
-      border-right: none;
-    }
-    
-    &.sortable {
-      cursor: pointer;
-      transition: background-color 0.2s;
-      
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      
-      &.active {
-        background: rgba(255, 255, 255, 0.2);
-        
-        .sortIcon {
-          color: #FFD700;
-        }
-      }
-    }
-    
-    .sortIcon {
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
+}
+
+.headerCell {
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border-right: 1px solid rgba(101, 67, 33, 0.3);
+
+  &:last-child {
+    border-right: none;
   }
 }
 
-.tableBody {
-  max-height: 70vh;
-  overflow-y: auto;
-}
+/* BODY */
+.tableBody {}
 
 .tableRow {
   display: grid;
-  grid-template-columns: 80px 1fr 80px 120px 120px 120px 120px 120px;
+  grid-template-columns: 60px 1fr 120px;
   border-bottom: 1px solid rgba(139, 69, 19, 0.2);
   transition: background-color 0.2s;
-  
+
   &:hover {
     background: rgba(139, 69, 19, 0.1);
-  }
-  
-  &.gold {
-    background: linear-gradient(90deg, rgba(255, 215, 0, 0.2) 0%, transparent 100%);
-  }
-  
-  &.silver {
-    background: linear-gradient(90deg, rgba(192, 192, 192, 0.2) 0%, transparent 100%);
-  }
-  
-  &.bronze {
-    background: linear-gradient(90deg, rgba(205, 127, 50, 0.2) 0%, transparent 100%);
   }
 }
 
@@ -90,171 +50,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid rgba(139, 69, 19, 0.1);
   font-size: 0.9rem;
-  
+
+  .trophy {
+    margin-left: 0.25rem;
+    font-size: 1rem;
+  }
+
   &:last-child {
     border-right: none;
   }
 }
 
-.rank {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  
-  .rankNumber {
-    font-weight: bold;
-    color: #8B4513;
-  }
-  
-  .medal {
-    font-size: 1.2rem;
-  }
-}
+/* MEDIA QUERIES (optional) */
+@media (max-width: 768px) {
 
-.playerInfo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-align: left;
-  width: 100%;
-  
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #8B4513;
-    flex-shrink: 0;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  
-  .playerDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    min-width: 0;
-    
-    .username {
-      font-weight: bold;
-      color: #8B4513;
-      font-size: 1rem;
-    }
-    
-    .wallet {
-      font-size: 0.8rem;
-      color: #A0522D;
-      font-family: monospace;
-    }
-    
-    .region {
-      font-size: 0.75rem;
-      color: #CD853F;
-    }
-  }
-}
-
-.level {
-  font-weight: bold;
-  color: #8B4513;
-  background: rgba(139, 69, 19, 0.1);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-
-.points {
-  font-weight: bold;
-  color: #B8860B;
-  font-size: 1.1rem;
-}
-
-.races {
-  font-weight: bold;
-  color: #8B4513;
-}
-
-.winRate {
-  font-weight: bold;
-  color: #228B22;
-}
-
-.tokens {
-  font-weight: bold;
-  color: #DAA520;
-  font-size: 1.1rem;
-}
-
-.horsesInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  
-  .horsesCount {
-    font-weight: bold;
-    color: #8B4513;
-    font-size: 1.1rem;
-  }
-  
-  .favoriteHorse {
-    font-size: 0.75rem;
-    color: #A0522D;
-    text-align: center;
-  }
-}
-
-.emptyState {
-  padding: 3rem;
-  text-align: center;
-  color: #8B4513;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 1200px) {
   .tableHeader,
   .tableRow {
-    grid-template-columns: 60px 1fr 70px 100px 100px 100px 100px 100px;
+    grid-template-columns: 40px 1fr 80px;
   }
-  
+
   .headerCell,
   .cell {
-    padding: 0.75rem 0.25rem;
+    padding: 0.5rem;
     font-size: 0.8rem;
   }
 }
 
-@media (max-width: 768px) {
-  .tableHeader,
-  .tableRow {
-    grid-template-columns: 50px 1fr 60px 80px 80px 80px;
-  }
-  
-  .headerCell:nth-child(n+7),
-  .cell:nth-child(n+7) {
-    display: none;
-  }
-  
-  .playerInfo {
-    .avatar {
-      width: 30px;
-      height: 30px;
-    }
-    
-    .playerDetails {
-      .username {
-        font-size: 0.9rem;
-      }
-      
-      .wallet,
-      .region {
-        display: none;
-      }
-    }
-  }
+/* add at the bottom */
+.loadingCell {
+  /* span all 3 columns in our 3-col grid */
+  grid-column: 1 / -1;
+  justify-content: center;
+  font-style: italic;
+  color: rgba(0,0,0,0.6);
 }

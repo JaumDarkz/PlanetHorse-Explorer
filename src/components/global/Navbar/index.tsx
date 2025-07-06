@@ -30,40 +30,39 @@ const Navbar: React.FC = () => {
           </button>
           <div className={styles.logo}>
             <Link href='/'>
-              
-                <Image
-                  layout='intrinsic'
-                  src='/assets/utils/logos/planet-horse.webp'
-                  alt='PlanetHorse'
-                  width={136}
-                  height={55}
-                />
-              
+
+              <Image
+                layout='intrinsic'
+                src='/assets/utils/logos/planet-horse.webp'
+                alt='PlanetHorse'
+                width={136}
+                height={55}
+              />
+
             </Link>
           </div>
           <div className={styles.options}>
+            {/* <a>|</a> */}
             <Link href='/'>
-              <div>EXPLORER</div>
-            </Link>
-            {/* <a>|</a> */}
-            <Link href='/referral'>
-              <div>REFERRAL</div>
-            </Link>
-            {/* <a>|</a> */}
-            <Link href='/leaderboard'>
               <div>LEADERBOARD</div>
             </Link>
             {/* <a>|</a> */}
-            <Link href='https://opensea.io/'>
+            <Link href='https://marketplace.roninchain.com/collections/origin-horses' target='_blank'>
               <div>MARKETPLACE</div>
             </Link>
+            {/* <Link href='/explorer'> */}
+            <div className={styles.disabledLink}>EXPLORER</div>
+            {/* </Link> */}
+            {/* <a>|</a> */}
+            {/* <Link href='/referral'> */}
+            <div className={styles.disabledLink}>REFERRAL</div>
+            {/* </Link> */}
           </div>
           <div
             className={styles.account}
           >
-
             <div id={styles.userProfileButton}>
-              <span className={styles.address}>{'Connect Wallet'}</span>
+              <span className={styles.disabledLink}>{'Connect Wallet'}</span>
               <div className={styles.userPicture}>
                 <Image alt='User Pic' width={40} height={40} src={noUserPic} />
               </div>
@@ -71,6 +70,7 @@ const Navbar: React.FC = () => {
 
           </div>
         </div>
+
       </div>
 
       <Burger close={burger} />

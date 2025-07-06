@@ -1,16 +1,16 @@
 import Navbar from "@/components/global/Navbar";
 import Pattern from "@/components/Pattern";
-import LeaderboardPage from "@/views/LeaderboardPage";
+import ExplorerPage from "@/views/ExplorerPage";
 
-export default function Leaderboard() {
+export default function Home() {
   return (
     <div>
-      <div style={{ paddingBottom: 90 }}>
-        <Navbar />
+      <div style={{paddingBottom: 90}}>
+      <Navbar />
       </div>
 
       <Pattern type="light">
-        <LeaderboardPage />
+        <ExplorerPage />
       </Pattern>
     </div>
   );

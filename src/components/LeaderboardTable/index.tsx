@@ -1,45 +1,39 @@
-"use client"
+"use client";
 
-import type React from "react"
-import styles from "./styles.module.scss"
-import type { Player, SortOption } from "../../types"
-import PlayerRow from "./PlayerRow"
-import TableHeader from "./TableHeader"
+import React from "react";
+import styles from "./styles.module.scss";
+import type { LeaderboardEntry } from "../../types";
+import PlayerRow from "./PlayerRow";
+import TableHeader from "./TableHeader";
 
 interface LeaderboardTableProps {
-  players: Player[]
-  currentPage: number
-  pageSize: number
-  sortBy: SortOption
-  onSortChange: (sort: SortOption) => void
+  entries: LeaderboardEntry[];
+  loading?: boolean;
 }
 
 const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
-  players,
-  currentPage,
-  pageSize,
-  sortBy,
-  onSortChange,
-}) => {
-  return (
-    <div className={styles.tableContainer}>
-      <div className={styles.table}>
-        <TableHeader sortBy={sortBy} onSortChange={onSortChange} />
+  entries,
+  loading = false,
+}) => (
+  <div className={styles.tableContainer}>
+    <div className={styles.table}>
+      <TableHeader />
 
-        <div className={styles.tableBody}>
-          {players.map((player, index) => (
-            <PlayerRow key={player.id} player={player} rank={(currentPage - 1) * pageSize + index + 1} />
-          ))}
-        </div>
+      <div className={styles.tableBody}>
+        {loading ? (
+          <div className={styles.tableRow}>
+            <div className={`${styles.cell} ${styles.loadingCell}`}>
+              Loading leaderboard…
+            </div>
+          </div>
+        ) : (
+          entries.map((entry) => (
+            <PlayerRow key={entry.wallet} entry={entry} />
+          ))
+        )}
       </div>
-
-      {players.length === 0 && (
-        <div className={styles.emptyState}>
-          <p>{"No players found matching your criteria"}</p>
-        </div>
-      )}
     </div>
-  )
-}
+  </div>
+);
 
-export default LeaderboardTable
+export default LeaderboardTable;

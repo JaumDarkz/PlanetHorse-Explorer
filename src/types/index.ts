@@ -52,3 +52,9 @@ export interface Milestone {
   rewards: Reward[]
   claimed: boolean
 }
+
+export interface LeaderboardEntry {
+  rank: string;
+  wallet: string;
+  totalPhorseSpent: number;
+}
